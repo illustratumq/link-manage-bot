@@ -9,7 +9,7 @@ services:
     stop_signal: SIGINT
     volumes:
       - ./app:/src/app
-    command: python -O bot.py"
+    command: "python -O bot.py"
     restart: unless-stopped
     env_file:
       - ".env"
@@ -28,7 +28,7 @@ services:
     env_file:
       - ".env"
     ports:
-      - "${REDIS_PORT}:${REDIS_PORT}"
+      - "6377:6379"
     volumes:
       - ./redisdata:/var/lib/redis
     restart: unless-stopped
